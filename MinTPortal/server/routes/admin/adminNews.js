@@ -66,6 +66,7 @@ router.post('/add-news', (req, res) => {
 
       if (req.file) {
         imagePath = req.file.path.replace(/\\/g, '/'); // Replace backward slashes with forward slashes
+        imagePath = imagePath.replace(/^public\//, ''); // Remove 'public/' from the path
       }
 
       const serverUrl = 'https://final-0t4v.onrender.com'; // Replace this with your server URL
