@@ -24,7 +24,7 @@ const SECRET_KEY = 'miint';
 //   });
 // }
 
-dashboardRoute3.get('/dashboard', Verify, (req, res) => {
+dashboardRoute3.get('/dashboard', (req, res) => {
   res.json('ok');
 });
 
