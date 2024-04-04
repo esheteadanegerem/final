@@ -4,10 +4,11 @@ import fs from 'fs'
 import jwt from 'jsonwebtoken'
 import path from 'path'
 import News from '../../models/news.js'
-//import Verify from "../../middleware/verfyAllRoutes.js";
-const router = express.Router()
-const SECRET_KEY='miint'
-// directory creation
+
+const router = express.Router();
+const SECRET_KEY = 'miint';
+
+// Directory creation
 function Verify(req, res, next) {
   const token = req.cookies.token;
 
@@ -20,8 +21,7 @@ function Verify(req, res, next) {
       return res.status(401).json('Unauthorized: Error during token verification');
     }
 
-    if (decode.role === 'admin3' ) {
-      
+    if (decode.role === 'admin3') {
       next();
     } else {
       return res.status(403).json('Forbidden: Not an admin');
@@ -48,54 +48,47 @@ const storage = multer.diskStorage({
   },
 });
 
-
 const upload = multer({
   storage: storage,
-  limits: { fileSize: 3000000 }, // File size limit: 1MB
+  limits: { fileSize: 3000000 }, // File size limit: 3MB
 }).single('image');
 
-
 // POST add-news
+// There is verify called here
 router.post('/add-news', (req, res) => {
   upload(req, res, async (err) => {
     if (err) {
       // Handle upload error
       res.status(500).json({ error: 'An error occurred while uploading' });
     } else {
-      const { title, author, content, category, date,  } = req.body;
-      let imagePath = 'public\\images\\noimage.png'
-      if (req.file){ imagePath = req.file.path; 
-      console.log(imagePath)  }
+      const { title, author, content, category, date } = req.body;
+      let imagePath = 'public/images/noimage.png';
+
+      if (req.file) {
+        imagePath = req.file.path.replace(/\\/g, '/'); // Replace backward slashes with forward slashes
+      }
+
       const serverUrl = 'https://final-0t4v.onrender.com'; // Replace this with your server URL
-      
-      //   Remove 'public' from the path
-      const parts = imagePath.split('public\\');
-      const cleanImagePath = parts.join('');
-      const imageUrl = serverUrl + '/' + cleanImagePath;      
-      const imagePaths = imageUrl.replace(/\//g, '\\')
-      console.log(imagePaths)
+      const imageUrl = serverUrl + '/' + imagePath;
+
+      try {
+        const newNews = await News.create({
+          title: title,
+          author: author,
+          content: content,
+          category: category,
+          date: date,
+          imagePath: imageUrl // Store the image URL in the database
+        });
         
-      // try {
-          const newNews =  News.create({
-        title:title,
-        author:author,
-        content:content,
-        category:category,
-        date:date,
-        imagePath: imagePaths
-      })
-      .then((result)=>{console.log(result); res.json(result)})
-      .catch(err=>console.log(err))
-      //  const savedNews = await newNews.save();
-      //   res.json({savedNews:savedNews,ok:'ok'});
-        
-        
-      // } catch (error) {
-       
-      //   console.error('An error occurred while saving to the database:', error);         
-      //   res.status(500).json({ error: 'An error occurred while saving to the database' });
-      // }
+        console.log(newNews);
+        res.json(newNews);
+      } catch (error) {
+        console.error('An error occurred while saving to the database:', error);
+        res.status(500).json({ error: 'An error occurred while saving to the database' });
+      }
     }
   });
 });
-export  default router;
+
+export default router;
