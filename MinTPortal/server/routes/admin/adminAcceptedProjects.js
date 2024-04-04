@@ -2,7 +2,7 @@ import express from 'express';
 import multer from 'multer';
 import fs from 'fs';
 import AcceptedProject from '../../models/acceptedProjects.js';
-import Verify from '../../middleware/verfyAllRoutes.js';
+
 const router = express.Router();
 
 const storage = multer.diskStorage({
@@ -13,6 +13,7 @@ const storage = multer.diskStorage({
     fs.mkdir(publicationsPath, { recursive: true }, (err) => {
       if (err) {
         console.error('Error creating directory:', err);
+        cb(err, null);
       } else {
         console.log('Directory created successfully:', publicationsPath);
         cb(null, publicationsPath);
@@ -32,38 +33,24 @@ const upload = multer({
   { name: 'file', maxCount: 1 },
 ]);
 
-router.post('/add-accepted-project',(req, res) => {
+router.post('/add-accepted-project', async (req, res) => {
   upload(req, res, async (err) => {
     if (err) {
       res.status(500).json({ error: 'An error occurred while uploading' });
     } else {
       const { title, p_investigator, author, funding_source, description, field_of_study, date } = req.body;
       let filePath = '';
-      let imagePath = 'public\\images\\noimage.png';
+      let imagePath = 'public/images/noimage.png';
 
-      if(req.files['file']) {
-        filePath = req.files['file'][0].path; // Multer saves the file path
-       console.log(filePath)
-       }
-                   
-       if (req.files['image']){ 
-       imagePath =  req.files['image'][0].path; // Multer saves the image path
-       console.log(imagePath) }
+      if (req.files['file']) {
+        filePath = req.files['file'][0].path.replace(/\\/g, '/'); // Replace backward slashes with forward slashes
+      }
 
+      if (req.files['image']) {
+        imagePath = req.files['image'][0].path.replace(/\\/g, '/'); // Replace backward slashes with forward slashes
+      }
 
       const serverUrl = 'https://final-0t4v.onrender.com'; // Replace this with your server URL
-
-      // Process image path
-      const partsImage = imagePath.split('public\\');
-      const cleanImagePath = partsImage.join('');
-      const imageUrl = serverUrl + '/' + cleanImagePath;
-      const imagePaths = imageUrl.replace(/\//g, '\\');
-
-      // Process file path
-      const partsFile = filePath.split('public/');
-      const cleanFilePath = partsFile.join('');
-      const fileUrl = serverUrl + '/' + cleanFilePath;
-      const filePaths = fileUrl.replace(/\//g, '\\');
 
       try {
         const newPublication = new AcceptedProject({
@@ -74,8 +61,8 @@ router.post('/add-accepted-project',(req, res) => {
           description,
           field_of_study,
           date,
-          imagePath: imagePaths,
-          filePath: filePaths,
+          imagePath: imagePath.replace(/^public\//, ''), // Remove 'public/' from the path
+          filePath: filePath.replace(/^public\//, ''), // Remove 'public/' from the path
         });
 
         const savedPublication = await newPublication.save();
