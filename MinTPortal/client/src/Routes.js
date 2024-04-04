@@ -43,7 +43,7 @@ import PostNews from './pages/admin3/PostNews'
 import ViewFile from './pages/admin/ViewFile';
 import ViewFeedback from "./pages/admin/ViewFeedback.js"
 import ViewNews from './pages/ViewNews.js';
-import ProtectAdmin from './ProtectAdmin.js';
+//mport ProtectAdmin from './ProtectAdmin.js';
 import ViewReports from './pages/admin/ViewReports.js';
 import ViewCommitteeReports from './pages/admin/ViewCommitteeReports.js';
 import AddAdmin from './pages/admin/AddAdmin.js';
@@ -137,7 +137,7 @@ const RoutesComponent = () => {
 
 
         <Route path="/graph" element={<GraphicalAnalysis />} />
-        <Route path="/protect" element={<ProtectAdmin/>}/>
+        {/* <Route path="/protect" element={<ProtectAdmin/>}/> */}
         <Route path="/" element={<Home />} />
         <Route path="/announcements" element={<Announcements />} />
         <Route path="/resources" element={<Resources />} />
@@ -182,7 +182,7 @@ const RoutesComponent = () => {
  
     
       <Routes>
-       <Route element={<ProtectAdmin/>}>
+       {/* <Route element={<ProtectAdmin/>}> */}
         <Route path='/admin' element = {<Layout />}>
           <Route  index element= {<Admin/>}/>
           <Route path='appointments/add-appointment' element={<SetAppointmentDate/>}/>
@@ -193,7 +193,7 @@ const RoutesComponent = () => {
           <Route  path='viewCommitteeReports' element={<ViewCommitteeReports/>}></Route>
           <Route  path='addAdmin' element={<AddAdmin/>}></Route>
         </Route>
-        </Route>
+        {/* </Route> */}
 
   {/* user */}
   </Routes>
