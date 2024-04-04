@@ -75,7 +75,7 @@ app.use('/public/history_files', express.static('public/history_files'));
 app.use('/history',histroyRoute)
 app.use('/auth/:page',register)
 app.use('/announcements/:page', announcementPost);
-app.use('/authl',login,ProtectAdmin)
+app.use('/authl',login)//,ProtectAdmin
 app.use('/admind',dashboardRoute)
 app.use('/admind2',dashboardRoute2)
 app.use('/admind3',dashboardRoute3)
