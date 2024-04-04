@@ -182,7 +182,7 @@ const RoutesComponent = () => {
  
     
       <Routes>
-       {/* <Route element={<ProtectAdmin/>}> */}
+       <Route element={<ProtectAdmin/>}>
         <Route path='/admin' element = {<Layout />}>
           <Route  index element= {<Admin/>}/>
           <Route path='appointments/add-appointment' element={<SetAppointmentDate/>}/>
@@ -193,7 +193,7 @@ const RoutesComponent = () => {
           <Route  path='viewCommitteeReports' element={<ViewCommitteeReports/>}></Route>
           <Route  path='addAdmin' element={<AddAdmin/>}></Route>
         </Route>
-        {/* </Route> */}
+        </Route>
 
   {/* user */}
   </Routes>

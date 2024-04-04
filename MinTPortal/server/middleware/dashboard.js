@@ -25,8 +25,8 @@ function Verify(req, res, next) {
   });
 }
 
-dashboardRoute.get('/dashboard', Verify, (req, res) => {
+dashboardRoute.get('/dashboard', (req, res) => {
   res.json('ok');
 });
 
-export default dashboardRoute;
+export default dashboardRoute; 

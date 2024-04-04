@@ -20,6 +20,7 @@ login.post('/login',(req,res)=>{
               SECRET_KEY,
               { expiresIn: '1d' }
          );
+         console.log(token)
             res.cookie('token', token, { httpOnly: true }); 
             return res.json({ message: 'ok', token,role:user.role });
           } else {

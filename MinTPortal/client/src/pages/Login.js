@@ -19,20 +19,7 @@ const Login = () => {
       } catch (error) {
         console.error('Logout failed:', error);
       }
-      // if(document.cookie){
-      //   if(document.cookie.split(';')[1].split('=')[1].replaceAll('"','') === "admin"){
-      //     history('/admin');
-      //   }
-      //   else if(document.cookie.split(';')[1].split('=')[1].replaceAll('"','') === "admin2"){
-      //     history('/admin2');
-      //   }
-      //   else if(document.cookie.split(';')[1].split('=')[1].replaceAll('"','') === "admin3"){
-      //     history('/admin3');
-      //   }
-      //   else if(document.cookie.split(';')[1].split('=')[1].replaceAll('"','') === "user"){
-      //     history('/user');
-      //   }
-      // }
+     
     }
     checkIfLoggedIn();
   },[]);
