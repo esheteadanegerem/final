@@ -48,10 +48,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser())
 app.use(cors({
- origin:'https://ethiopianationalresearch.netlify.app',
-  // methods: ['GET', 'POST',"PUT"],
+  origin: 'https://ethiopianationalresearch.netlify.app',
   credentials: true
 }));
+
 
 app.use(express.static(path.join('./', 'public')));
 
