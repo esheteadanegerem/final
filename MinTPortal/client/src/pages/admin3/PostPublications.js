@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import '../../images/assets/css/admin.css'
-import DropzoneImage from '../../components/AdminComponents/Dropzone'
-import DropzoneText from '../../components/AdminComponents/DropzoneText'
+// import DropzoneImage from '../../components/AdminComponents/Dropzone'
+// import DropzoneText from '../../components/AdminComponents/DropzoneText'
 import Sidebar from './Sidebar.js';
 
 axios.defaults.withCredentials=true;
@@ -22,7 +22,7 @@ function PostPublications() {
       
     });
 
-    const defaultImageURL = 'http://localhost:5001/images/noimage.png'
+    const defaultImageURL = 'https://final-0t4v.onrender.com/images/noimage.png'
     const [imagePreview, setImagePreview] = useState(defaultImageURL);
     
     const handleFileSelect = (event) => {
@@ -94,7 +94,7 @@ function PostPublications() {
       
     
     try {
-      const response =  axios.post('http://localhost:5001/admin/publications/add-publication', data);
+      const response =  axios.post('https://final-0t4v.onrender.com/admin/publications/add-publication', data);
       console.log(response.data);
       alert('Do you want to submit')
       toast.info('News submitted successfully!');

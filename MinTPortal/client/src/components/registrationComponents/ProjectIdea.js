@@ -93,7 +93,7 @@ const ProjectIdea = ({ nextStep, prevStep }) => {
     }
     try {
       const response = await axios.put(
-        "http://localhost:5001/auth/submitProject",
+        "https://final-0t4v.onrender.com/auth/submitProject",
         formData
       );
       console.log(response);

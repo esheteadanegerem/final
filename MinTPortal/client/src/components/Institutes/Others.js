@@ -12,7 +12,7 @@ const Others = () => {
     // Fetch data when the component mounts
     const fetchAgencies = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/institutes/others');
+        const response = await axios.get('https://final-0t4v.onrender.com/institutes/others');
         const data = response.data;
         setAgencies(data);
         setLoaded(true);

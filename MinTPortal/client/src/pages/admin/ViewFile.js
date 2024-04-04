@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
 import { useLocation } from "react-router-dom";
-import AdminHeader from "../../components/AdminComponents/AdminHeader";
+// import AdminHeader from "../../components/AdminComponents/AdminHeader";
 
 function ViewFile(){
     try{

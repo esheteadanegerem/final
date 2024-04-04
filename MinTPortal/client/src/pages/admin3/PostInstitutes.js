@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import '../../images/assets/css/admin.css';
 import Sidebar from './Sidebar.js';
@@ -21,7 +21,7 @@ function PostInstitutes() {
 
   });
 
-  const defaultImageURL = 'http://localhost:5001/images/noimage.png'
+  const defaultImageURL = 'https://final-0t4v.onrender.com/images/noimage.png'
   const [imagePreview, setImagePreview] = useState(defaultImageURL);
   
 
@@ -50,6 +50,7 @@ function PostInstitutes() {
   };
  //text file
     
+ // eslint-disable-next-line no-unused-vars
  const handleTextFileSelect = (event) => {
       
   const selectedFile = event.target.files[0];       
@@ -107,7 +108,7 @@ function PostInstitutes() {
      
 
       try {
-        const response = axios.post('http://localhost:5001/admin/institutes/post-to-institutes', data);
+        const response = axios.post('https://final-0t4v.onrender.com/admin/institutes/post-to-institutes', data);
         console.log(response.data);
           alert('Do you want to submit')
           toast.info('Institutes form submitted successfully!');

@@ -1,9 +1,11 @@
 // EthicalEvaluation.js
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect } from 'react';
 import "../../App.css";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// eslint-disable-next-line no-unused-vars
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 const EthicalEvaluation = ({ prevStep }) => {

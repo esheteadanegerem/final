@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AppointmnetImg from '../../images/user/appoint.png';
+// eslint-disable-next-line no-unused-vars
 import { toast, ToastContainer } from 'react-toastify';
 
 const ConfirmAppointment = ({email}) => {
@@ -11,7 +12,7 @@ const ConfirmAppointment = ({email}) => {
   //console.log(email1);
   useEffect(
     function(){
-      axios.get('http://localhost:5001/admin/appointment/load-'+email1)
+      axios.get('https://final-0t4v.onrender.com/admin/appointment/load-'+email1)
       .then((result)=>{
         setAppoint(result.data);
         //console.log(result);
@@ -64,8 +65,8 @@ function updateStatus(id){
   const projectID = id.split('-')[0];
   const text = document.getElementById(projectID+"-Message");
   const message = {message:text.value};
-  // axios.get('http://localhost:5001/admin/appointment/setStatus-'+id)
-  axios.post('http://localhost:5001/admin/appointment/setStatus-'+id, message)
+  // axios.get('https://final-0t4v.onrender.com/admin/appointment/setStatus-'+id)
+  axios.post('https://final-0t4v.onrender.com/admin/appointment/setStatus-'+id, message)
   .then(result=>console.log(result))
   .catch(err=>console.log(err));
   toast.success("Action Submitted");

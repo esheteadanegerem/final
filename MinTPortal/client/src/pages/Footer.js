@@ -3,7 +3,7 @@
 
 import React from 'react';
 import FooterForm from '../components/footerComponents/FooterForm';
-import { Link } from 'react-router-dom';
+
 import { FaPhone, FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { RiMapPin2Fill, RiMailFill } from 'react-icons/ri';
 import Logo from '../images/Logo.jpg';
@@ -58,9 +58,9 @@ const Footer = () => {
                 <li className='mb-2'><RiMailFill /> contact@mint.gov.et</li>
                 <li><RiMapPin2Fill /> Addis Ababa, Ethiopia</li>
                 <div className="mt-3">
-                  <a href="https://www.facebook.com/MInT.Ethiopia/" className="me-2" style={{color:"orange"}} target="_blank"><FaFacebook /></a>
-                  <a href="https://twitter.com/ministryofinno2?lang=en" className="me-2" style={{color:"orange"}} target="_blank"><FaTwitter /></a>
-                  <a href="https://www.linkedin.com/company/ministry-of-innovation-and-technology-ethiopia/?originalSubdomain=et" className="me-2" style={{color:"orange"}} target="_blank"><FaLinkedin /></a>  
+                  <a href="https://www.facebook.com/MInT.Ethiopia/" className="me-2" style={{color:"orange"}} target="_blank" rel="noreferrer"><FaFacebook /></a>
+                  <a href="https://twitter.com/ministryofinno2?lang=en" className="me-2" style={{color:"orange"}} target="_blank" rel="noreferrer"><FaTwitter /></a>
+                  <a href="https://www.linkedin.com/company/ministry-of-innovation-and-technology-ethiopia/?originalSubdomain=et" className="me-2" style={{color:"orange"}} target="_blank" rel="noreferrer"><FaLinkedin /></a>  
                 </div>
          
       

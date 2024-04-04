@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from 'react-bootstrap';
 import axios from 'axios';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Sidebar from './Sidebar.js';
 
 const ViewFeedback = () => {
   const [feedbackData, setFeedbackData] = useState([]);
   const location = useLocation();
+  // eslint-disable-next-line no-unused-vars
   const {email} = location.state;
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/footer');
+        const response = await axios.get('https://final-0t4v.onrender.com/footer');
         console.log('Feedback Data:', response.data); // Check if data is logged correctly
         setFeedbackData(response.data);
       } catch (error) {

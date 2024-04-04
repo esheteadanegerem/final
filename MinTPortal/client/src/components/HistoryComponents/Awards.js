@@ -7,11 +7,7 @@ const Awards = () => {
 
   return (
     <div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <p>{id}</p>
+     
       <p>Award area</p>
     </div>
   );

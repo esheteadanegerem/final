@@ -6,6 +6,7 @@ import EthicalEvaluation from '../components/registrationComponents/EthicalEvalu
 
 const Register = () => {
   const [step, setStep] = useState(1);
+  // eslint-disable-next-line no-unused-vars
   let email = "";
   useEffect(function(){
     function checkIfUserLoggedIn(){
@@ -24,7 +25,7 @@ const Register = () => {
     }
     async function logout (){
       try {
-        await axios.get('http://localhost:5001/logout');
+        await axios.get('https://final-0t4v.onrender.com/logout');
         //window.location.href = '/login'; 
       } catch (error) {
         console.error('Logout failed:', error);

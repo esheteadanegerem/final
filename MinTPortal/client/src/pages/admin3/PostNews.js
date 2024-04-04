@@ -1,12 +1,14 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import axios from 'axios';
+// eslint-disable-next-line no-unused-vars
 import {useSelector, useDispatch} from 'react-redux'
-import FileBase from 'react-file-base64'
+// import FileBase from 'react-file-base64'
 import { ToastContainer, toast } from 'react-toastify';
-import {setNews} from '../../actions/news'
+// import {setNews} from '../../actions/news'
 import '../../images/assets/css/admin.css';
-import Dropzone from '../../components/AdminComponents/Dropzone';
+// import Dropzone from '../../components/AdminComponents/Dropzone';
 import Sidebar from './Sidebar.js';
 
 
@@ -14,8 +16,9 @@ axios.defaults.withCredentials=true;
 
 function Post_News() {
   
-  const defaultImageURL = 'http://localhost:5001/images/noimage.png'
+  const defaultImageURL = 'https://final-0t4v.onrender.com/images/noimage.png'
   const [imagePreview, setImagePreview] = useState(defaultImageURL);
+  // eslint-disable-next-line no-unused-vars
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     title: '',
@@ -28,7 +31,7 @@ function Post_News() {
   });
 
 
-  // const defaultImageURL = 'http://localhost:5001/images/noimage.png'
+  // const defaultImageURL = 'https://final-0t4v.onrender.com/images/noimage.png'
   // const [imagePreview, setImagePreview] = useState(defaultImageURL);
   
 
@@ -102,7 +105,7 @@ function Post_News() {
       data.append('image', formData.image);
 
       try {
-        const response = axios.post('http://localhost:5001/admin/news/add-news', data);
+        const response = axios.post('https://final-0t4v.onrender.com/admin/news/add-news', data);
         console.log(response.data);
           alert('Do you want to submit')
           toast.info('News form submitted successfully!');

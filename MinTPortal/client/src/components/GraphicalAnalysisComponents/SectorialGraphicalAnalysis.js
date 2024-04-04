@@ -10,7 +10,7 @@ const SectorialGraphicalAnalysis = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(('http://localhost:5001/resources/project-idea'));
+        const response = await axios.get(('https://final-0t4v.onrender.com/resources/project-idea'));
         setData(response.data);
         setLoading(false);
       } catch (error) {

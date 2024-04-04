@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import countryOptions from "./countryOptions";
 import { Link } from "react-router-dom";
 import { VscEyeClosed, VscEye } from "react-icons/vsc";
+// eslint-disable-next-line no-unused-vars
 import { Form, FormGroup } from "react-bootstrap";
 import axios from "axios";
 const BasicPersonalInfo = ({ nextStep}) => {
@@ -43,7 +44,7 @@ const BasicPersonalInfo = ({ nextStep}) => {
   
     if (password === confirmPassword && password.length >= 8 && /(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&*!.])[A-Za-z\d@#$%^&*!.]{8,}/.test(password)) {
       axios
-        .post("http://localhost:5001/auth/register", {
+        .post("https://final-0t4v.onrender.com/auth/register", {
           fName,
           LName,
           password,

@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import { useLocation } from "react-router-dom";
 import axios from 'axios'
 // import { AppBar, Typography, Toolbar, Avatar, Button} from '@material-ui/core';
 //import Stack from '@mui/material/Stack';
@@ -11,7 +10,7 @@ import { BsFillPersonFill } from "react-icons/bs";
 
 function AdminHeader() {
 
-  const location = useLocation();
+  //const location = useLocation();
   const navigate = useNavigate();
   if(!document.cookie){
     navigate('/');
@@ -25,14 +24,16 @@ function AdminHeader() {
   useEffect(() => {
     const checkAuthentication = async () => {
       try {
+        // eslint-disable-next-line no-unused-vars
         let response = null;
-        // axios.get('http://localhost:5001/check-auth-status')
+        // axios.get('https://final-0t4v.onrender.com/check-auth-status')
         // .then(result=> {response = result; console.log(result);})
         // .catch(err=>console.log(err));
 
+        // eslint-disable-next-line no-unused-vars
         let response2 = null;
         if(role === "admin"){
-          axios.get('http://localhost:5001/admind/dashboard')
+          axios.get('https://final-0t4v.onrender.com/admind/dashboard')
           .then(result=> {response2 = result; console.log(result);})
           .catch(err=>console.log(err));
           if(path.startsWith('/admin2') || path.startsWith('/admin3')){
@@ -40,7 +41,7 @@ function AdminHeader() {
           }
         }
         else if(role === "admin2"){
-          axios.get('http://localhost:5001/admind2/dashboard')
+          axios.get('https://final-0t4v.onrender.com/admind2/dashboard')
           .then(result=> {response2 = result; console.log(result);})
           .catch(err=>console.log(err));
           if(!path.startsWith('/admin2')){
@@ -48,7 +49,7 @@ function AdminHeader() {
           }
         }
         else if(role === "admin3"){
-          axios.get('http://localhost:5001/admind3/dashboard')
+          axios.get('https://final-0t4v.onrender.com/admind3/dashboard')
           .then(result=> {response2 = result; console.log(result);})
           .catch(err=>console.log(err));
           if(!path.startsWith('/admin3')){
@@ -56,7 +57,7 @@ function AdminHeader() {
           }
         }
 
-        axios.post('http://localhost:5001/getName', {email:email})
+        axios.post('https://final-0t4v.onrender.com/getName', {email:email})
         .then(result=> {response = result; setUserName(result.data.name); console.log(result);})
         .catch(err=>console.log(err));
         
@@ -78,9 +79,10 @@ function AdminHeader() {
          checkAuthentication();
       
   }
-  , []);
+  , [email, navigate, path, role, userName]);
   
   
+  // eslint-disable-next-line no-unused-vars
   function isLoggedIn() {
       // Check if a user identifier exists in session storage
       //return sessionStorage.getItem('user') !== null;
@@ -94,7 +96,7 @@ function AdminHeader() {
  
   const logout = async () => {
     try {
-      await axios.get('http://localhost:5001/logout');
+      await axios.get('https://final-0t4v.onrender.com/logout');
       setIsAuthenticated(false);
       navigate('/login')
       //window.location.href = '/login'; 

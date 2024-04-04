@@ -7,10 +7,12 @@ import FeedbackReport from './FeedbackReport';
 import SetProjectStatus from './SetProjectStatus';
 import '../../App.css';
 import { Link } from 'react-router-dom'
+// eslint-disable-next-line no-unused-vars
 import {toast, ToastContainer} from 'react-toastify';
 
 const UserDashboard = () => {
   const [selectedOption, setSelectedOption] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const location = useLocation();
   const navigate = useNavigate();
   if(!document.cookie){
@@ -34,6 +36,7 @@ const UserDashboard = () => {
       }
     }
     checkIfUser();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
   const handleOptionClick = (option) => {
     setSelectedOption(option);

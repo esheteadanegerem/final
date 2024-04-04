@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import { FaSearch } from "react-icons/fa"; // Importing the search icon
-import Logo from "../images/Logo.jpg";
-import { Button } from "react-bootstrap";
 
 axios.defaults.withCredentials = true;
 
@@ -12,7 +8,7 @@ const History = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5001/resources/history")
+      .get("https://final-0t4v.onrender.com/resources/history")
       .then((response) => {
         const parsedData =
           typeof response.data === "string"
@@ -30,6 +26,7 @@ const History = () => {
       });
   }, []);
   // get file name
+  // eslint-disable-next-line no-unused-vars
   function getFileNameFromPath(filePath) {
     const parts = filePath.split(/[\\/]/); // Split the path using either / or \
     return parts[parts.length - 1]; // Get the last part, which is the file name
@@ -37,6 +34,7 @@ const History = () => {
 
   // handle dowload
 
+  // eslint-disable-next-line no-unused-vars
   const handleDownload = (fileUrl, fileName) => {
     axios({
       url: fileUrl,
@@ -56,6 +54,7 @@ const History = () => {
         // Handle the error, maybe show a message to the user
       });
   };
+  // eslint-disable-next-line no-unused-vars
   function searchItem(e) {
     let searchText = e.value.toLowerCase();
     let titles2 = Array.from(document.getElementsByClassName("card-title"));
@@ -105,7 +104,7 @@ const History = () => {
               adoption of information and communication technologies (ICT). With each passing year, the MinT's unwavering commitment to 
               innovation has paved the way for a brighter digital future, empowering Ethiopia to thrive in the digital age.</p>
           <p className="btn" style={{marginTop: "20px", fontSize: "20px"}}>
-            <a style={{textDecoration:"none",borderRadius:"5px"}} href="#">
+            <a style={{textDecoration:"none",borderRadius:"5px"}} href="#5">
               Discover our past achievements
             </a>
           </p>
@@ -129,7 +128,7 @@ const History = () => {
       >
         <div className="d-flex justify-content-center align-items-center h-100">
           {/* <img src={Logo} alt="Logo" style={{ maxWidth: '100%', maxHeight: '100%' }} /> */}
-          <img
+          <img  alt="mesdf"
             className="kenburns-top"
             src="https://scontent.fadd2-1.fna.fbcdn.net/v/t39.30808-6/434727280_740806204906794_5669519378009709643_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=rMEqPCkE84wAX9p0vSg&_nc_ht=scontent.fadd2-1.fna&oh=00_AfCPdV29evCi7C6KQXaOhO_XroETHLFqiPRMH48qzHKz8A&oe=6612F4BE"
             style={{ width: "100%", height: "100%" }}

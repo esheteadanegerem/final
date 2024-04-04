@@ -1,6 +1,7 @@
 // src/components/homeComponents/RegistrationSteps.js
 
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { Link } from 'react-router-dom';
 // import RegisterImage from '../../images/home/register2.jpeg';
 import RegImage from "../../images/Register/registerr.jpg";

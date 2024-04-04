@@ -12,7 +12,7 @@ const IctPartners = () => {
     // Fetch data when the component mounts
     const fetchPartners = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/institutes/partners');
+        const response = await axios.get('https://final-0t4v.onrender.com/institutes/partners');
         const data = response.data;
         setPartners(data);
       } catch (error) {
@@ -23,6 +23,7 @@ const IctPartners = () => {
     fetchPartners();
   }, []);
 
+  // eslint-disable-next-line no-unused-vars
   const handleTitleClick = (link) => {
     window.open(link, "_blank");
   };

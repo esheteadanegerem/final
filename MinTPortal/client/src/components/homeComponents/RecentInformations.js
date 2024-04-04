@@ -1,4 +1,5 @@
 import React from 'react'
+// eslint-disable-next-line no-unused-vars
 import LatestNews from './LatestNews'
 import LatestAnnouncement from './LatestAnnoucement'
 

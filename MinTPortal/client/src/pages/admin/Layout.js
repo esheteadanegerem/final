@@ -2,6 +2,7 @@ import { Outlet, Link, useLocation } from "react-router-dom";
 
 const Layout = () => {
 
+  // eslint-disable-next-line no-unused-vars
   const location = useLocation();
   //const {email} = location.state;
   let email = "";

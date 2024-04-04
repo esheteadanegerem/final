@@ -1,6 +1,6 @@
 // src/components/pages/News.js
 import React, {useState, useEffect}  from 'react';
-import {useSelector} from 'react-redux'
+
 import { Link } from 'react-router-dom';
 import axios from 'axios'
 import { FaSearch } from 'react-icons/fa'; // Importing the search icon
@@ -16,7 +16,7 @@ const News = () => {
   useEffect(() => {
     // Fetch data when the component mounts
     
-    axios.get('http://localhost:5001/news')
+    axios.get('https://final-0t4v.onrender.com/news')
       .then(response => {
         const parsedData = typeof response.data === 'string' ? JSON.parse(response.data) : response.data;
         console.log(parsedData.date)

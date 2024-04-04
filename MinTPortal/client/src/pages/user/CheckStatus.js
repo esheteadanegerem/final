@@ -20,7 +20,7 @@ const CheckStatus = ({email}) => {
   const email1 = email;
   useEffect(
     function(){
-      axios.get('http://localhost:5001/admin/userStatus/fetch-'+email1)
+      axios.get('https://final-0t4v.onrender.com/admin/userStatus/fetch-'+email1)
       .then((result)=>{
         setProjects(result.data);
         //console.log(result);
@@ -31,6 +31,7 @@ const CheckStatus = ({email}) => {
   ,[email1]);
   function displayProjects(){
     const tableData = [];
+    // eslint-disable-next-line no-unused-vars
     let i = 1;
     for (let j = 0; j < projects.length; j++) {
       if(projects[j].status > -1){

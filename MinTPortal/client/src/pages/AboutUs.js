@@ -1,18 +1,19 @@
+/* eslint-disable no-dupe-keys */
 import React from 'react'
-import { BsFillPersonFill } from "react-icons/bs";
-import GoogleMapLocation from '../images/GoogleMapLocation.png'; 
+// import { BsFillPersonFill } from "react-icons/bs";
+// import GoogleMapLocation from '../images/GoogleMapLocation.png'; 
 import OrganizationStructure from "../components/AboutUsComponents/OrganizationStructure";
 import './assets/AboutUs.css'
 import Logo from '../images/Logo.jpg'
-import Vision from '../images/AboutUs/vision.jpg'
-import Mission from '../images/AboutUs/mission.jpg'
-import Value from '../images/AboutUs/values.jpg'
+// import Vision from '../images/AboutUs/vision.jpg'
+// import Mission from '../images/AboutUs/mission.jpg'
+// import Value from '../images/AboutUs/values.jpg'
 import Leaders from "../components/AboutUsComponents/Leaders";
 import image1 from "../images/News/news1.png"
 import image2 from "../images/News/news2.jpeg"
 import image3 from "../images/News/news3.jpeg"
 import image4 from "../images/News/news4.jpeg"
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 

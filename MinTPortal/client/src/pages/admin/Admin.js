@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import Sidebar from './Sidebar.js';
 
 function Admin() {
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
+  // eslint-disable-next-line no-unused-vars
   const location = useLocation();
   let email = "";
   if(!document.cookie){
@@ -21,7 +22,7 @@ function Admin() {
 
   useEffect(() => {
     axios.defaults.withCredentials = true;
-    axios.get('http://localhost:5001/admind/dashboard') // Update the route path here
+    axios.get('https://final-0t4v.onrender.com/admind/dashboard') // Update the route path here
       .then((result) => {
         console.log(result)
         if (result.data === 'ok') {
@@ -34,6 +35,7 @@ function Admin() {
         console.log(error);
         navigate('/login'); // Handle errors by redirecting to the login page
       });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

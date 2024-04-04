@@ -12,7 +12,7 @@ const Laboratories = () => {
     // Fetch data when the component mounts
     const fetchLaboratories = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/institutes/laboratories');
+        const response = await axios.get('https://final-0t4v.onrender.com/institutes/laboratories');
         const data = response.data;
         setLaboratories(data);
       } catch (error) {

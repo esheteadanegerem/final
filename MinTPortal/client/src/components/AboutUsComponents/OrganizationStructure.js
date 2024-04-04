@@ -1,7 +1,7 @@
 // src/components/AboutUsComponents/OrganizationStructureSection.js
 
 import React, { useState } from 'react';
-import imgPath from "../../images/AboutUs/arm.png";
+//import imgPath from "../../images/AboutUs/arm.png";
       
 const OrganizationStructureSection = () => {
   const [selectedButton, setSelectedButton] = useState(null);

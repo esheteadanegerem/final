@@ -14,7 +14,7 @@ const Collaborations = () => {
 
   const fetchCollaborations = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/collaboration/collaborations');
+      const response = await axios.get('https://final-0t4v.onrender.com/collaboration/collaborations');
       setCollaborations(response.data);
     } catch (error) {
       console.error('Error fetching collaborations:', error);

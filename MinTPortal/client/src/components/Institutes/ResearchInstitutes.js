@@ -11,7 +11,7 @@ const ResearchInstitutes = () => {
     // Fetch data when the component mounts
     const fetchResearch = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/institutes/researchs');
+        const response = await axios.get('https://final-0t4v.onrender.com/institutes/researchs');
         const data = response.data;
         setResearch(data);
       } catch (error) {
@@ -22,6 +22,7 @@ const ResearchInstitutes = () => {
     fetchResearch();
   }, []);
 
+  // eslint-disable-next-line no-unused-vars
   const handleTitleClick = (link) => {
     window.open(link, "_blank");
   };

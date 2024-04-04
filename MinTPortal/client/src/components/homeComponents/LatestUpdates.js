@@ -23,7 +23,7 @@ const LatestUpdates = () => {
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
     axios
-      .get('http://localhost:5001/news')
+      .get('https://final-0t4v.onrender.com/news')
       .then(response => { setNews(response.data); setLoaded(true)})
       .catch(error => {
         console.error('Error fetching news:', error);

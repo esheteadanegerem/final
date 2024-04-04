@@ -16,7 +16,7 @@ const ForeignCalls = (props) => {
 
   console.log(category);
   useEffect(function(){
-    axios.get("http://localhost:5001/announcements/fetchCalls")
+    axios.get("https://final-0t4v.onrender.com/announcements/fetchCalls")
     .then(result=>setCalls(result.data))
     .then(result=>console.log(result))
     .catch(err=>console.log(err))

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../../images/assets/css/admin.css';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 
 function Sidebar(props){
     const {email} = props;

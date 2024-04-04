@@ -11,6 +11,7 @@ import AddAdmin from './pages/admin/AddAdmin'
 import Home from './pages/Home'
 import {Routes,Route} from 'react-router-dom'
 
+// eslint-disable-next-line no-unused-vars
 import React, { useCallback } from 'react'
 import axios from 'axios'
 import { useState,useEffect } from 'react'
@@ -19,11 +20,12 @@ const ProtectAdmin = () => {
     const[role,setdata]=useState('');
     const navigate = useNavigate();
     useEffect(()=>{
-        axios.get('http://localhost:5001/authl/protect')
+        axios.get('https://final-0t4v.onrender.com/authl/protect')
         .then(result=>{
             // console.log(result.data)
             setdata(result.data)})
         .catch(error=>{console.log(error); navigate('/login')});
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     let isAuth = false;
 

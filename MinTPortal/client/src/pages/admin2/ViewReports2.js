@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import '../../images/assets/css/admin.css'
 import axios from 'axios';
-import DropzoneImage from '../../components/AdminComponents/Dropzone'
-import DropzoneText from '../../components/AdminComponents/DropzoneText'
+// import DropzoneImage from '../../components/AdminComponents/Dropzone'
+// import DropzoneText from '../../components/AdminComponents/DropzoneText'
 import Sidebar from './Sidebar.js';
 import '../../images/assets/css/admin.css';
 import { useLocation } from 'react-router-dom';
@@ -17,7 +17,7 @@ function ViewReports2() {
     const [reports, setReports] = useState([]);
     const [loaded, setLoaded] = useState(false);
     useEffect(function(){
-        axios.get('http://localhost:5001/report/getAll')
+        axios.get('https://final-0t4v.onrender.com/report/getAll')
         .then((result)=>{setReports(result.data); console.log(result)})
         .catch(err=>console.log(err))
         setLoaded(true);
@@ -60,9 +60,10 @@ function ViewReports2() {
     }
     function submitFeedback(id){
         const reportID = id.split('-')[0];
+        // eslint-disable-next-line no-unused-vars
         const projID = id.split('-')[1];
         const feedback = document.getElementById(reportID+"-input").value;
-        axios.post('http://localhost:5001/report/setMessage', {reportID:reportID, message: feedback})
+        axios.post('https://final-0t4v.onrender.com/report/setMessage', {reportID:reportID, message: feedback})
         .then((result)=>{console.log(result); toast.info("Feedback Submitted Successfully");})
         .catch(err=>console.log(err))
     }

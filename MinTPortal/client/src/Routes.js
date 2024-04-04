@@ -110,7 +110,9 @@ const ConditionalNavbar = () => {
 
 
 const ConditionalFooter = () => {
+  // eslint-disable-next-line no-unused-vars
   const navigate = useNavigate();
+  // eslint-disable-next-line no-unused-vars
   const path = window.location.pathname;
 
   // if (path === '/login' || path === '/register') {

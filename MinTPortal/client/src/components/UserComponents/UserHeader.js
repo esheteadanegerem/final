@@ -6,22 +6,25 @@ import '../../images/assets/css/admin.css';
 import logo from '../../images/Logo.jpg';
 
 function UserHeader() {
+  // eslint-disable-next-line no-unused-vars
   const location = useLocation();
   //const {email, role} = location.state;
   //console.log(email);
   const navigate = useNavigate()
+  // eslint-disable-next-line no-unused-vars
   const [isAuthenticated, setIsAuthenticated] = useState(null) ;
   const [userName, setUserName] = useState('')
   useEffect(() => {
     const checkAuthentication = async () => {
       try {
+        // eslint-disable-next-line no-unused-vars
         let response = null;
-        // axios.get('http://localhost:5001/check-auth-status')
+        // axios.get('https://final-0t4v.onrender.com/check-auth-status')
         // .then(result=> {response = result; console.log(result);})
         // .catch(err=>console.log(err));
 
         const email1 = document.cookie.split(';')[0].split('=')[1].replaceAll('"','');
-        axios.post('http://localhost:5001/getName', {email:email1})
+        axios.post('https://final-0t4v.onrender.com/getName', {email:email1})
         .then(result=> {response = result; setUserName(result.data.name); console.log(result);})
         .catch(err=>console.log(err));
         //const isAuthenticated = response.data.isAuthenticated;
@@ -42,10 +45,11 @@ function UserHeader() {
          checkAuthentication();
       
   }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   , []);
   const logout = async () => {
     try {
-      await axios.get('http://localhost:5001/logout');
+      await axios.get('https://final-0t4v.onrender.com/logout');
       setIsAuthenticated(false);
       navigate('/login')
       //window.location.href = '/login'; 

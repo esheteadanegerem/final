@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import '../../images/assets/css/admin.css';
 import axios from 'axios';
-import AdminHeader from '../../components/AdminComponents/AdminHeader';
+// import AdminHeader from '../../components/AdminComponents/AdminHeader';
 import Sidebar from './Sidebar.js';
 
 function UpdateUserStatus() {
@@ -11,20 +11,22 @@ function UpdateUserStatus() {
   const [feedbacks, setFeedbacks] = useState([]);
   const[loaded, setLoaded] = useState(false);
   const location = useLocation();
+  // eslint-disable-next-line no-unused-vars
   const {email} = location.state;
   useEffect(
     function(){
-      axios.get('http://localhost:5001/admin/userStatus/getAll')
+      axios.get('https://final-0t4v.onrender.com/admin/userStatus/getAll')
       .then((result)=>{
         setProjects(result.data);
         //console.log(result);
       })
       .catch(err=>console.log(err))
-      axios.get('http://localhost:5001/admin2Feedback/getFeedback')
+      axios.get('https://final-0t4v.onrender.com/admin2Feedback/getFeedback')
       .then((result)=>{setFeedbacks(result.data); console.log(feedbacks)})
       .catch(err=>console.log(err))
       setLoaded(true);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   ,[]);
   function displayProjects(){
     const tableData = [];
@@ -87,7 +89,7 @@ function organizeFeedback(id, status){
 }
 function updateStatus(id, newStatus){
   console.log("Clicked!")
-  axios.get('http://localhost:5001/admin/userStatus/'+id+"-"+newStatus)
+  axios.get('https://final-0t4v.onrender.com/admin/userStatus/'+id+"-"+newStatus)
   .then(result=>console.log(result))
   .catch(err=>console.log(err));
   window.location.reload(false);

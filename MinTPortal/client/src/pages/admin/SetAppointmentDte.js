@@ -22,7 +22,7 @@ function SetAppointmentDate() {
   });
 
 
-  // const defaultImageURL = 'http://localhost:5001/images/noimage.png'
+  // const defaultImageURL = 'https://final-0t4v.onrender.com/images/noimage.png'
   // const [imagePreview, setImagePreview] = useState(defaultImageURL);
   
 
@@ -60,11 +60,12 @@ function SetAppointmentDate() {
 
   const handleSubmit = async (e) => {
       e.preventDefault();
-    //  const emailResponse = await axios.post('http://localhost:5001/admin/appointments/add-appointment');
+    //  const emailResponse = await axios.post('https://final-0t4v.onrender.com/admin/appointments/add-appointment');
       dispatch(setAppointment(formData));
     
   };
 
+  // eslint-disable-next-line no-unused-vars
   const clear = () => {
 
   }

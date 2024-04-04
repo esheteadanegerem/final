@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import { Link, useLocation } from 'react-router-dom';
+import {  useLocation } from 'react-router-dom';
 import '../../images/assets/css/admin.css';
 import axios from 'axios';
-import AdminHeader from '../../components/AdminComponents/AdminHeader';
+// import AdminHeader from '../../components/AdminComponents/AdminHeader';
 import Sidebar from './Sidebar.js';
 
 
@@ -11,10 +11,11 @@ function SetAppointmentDate() {
   const [projects, setProjects] = useState([]);
   const[loaded, setLoaded] = useState(false);
   const location = useLocation();
+  // eslint-disable-next-line no-unused-vars
   const {email} = location.state;
   useEffect(
     function(){
-      axios.get('http://localhost:5001/admin/appointment/getAll')
+      axios.get('https://final-0t4v.onrender.com/admin/appointment/getAll')
       .then((result)=>{
         setProjects(result.data);
         //console.log(result);
@@ -54,7 +55,7 @@ function updateStatus(id){
   const dateInput = document.getElementById(id);
   const newDate = new Date(dateInput.value).toISOString(); 
   console.log(newDate);
-  axios.get('http://localhost:5001/admin/appointment/setAppointment_'+id+"_"+newDate)
+  axios.get('https://final-0t4v.onrender.com/admin/appointment/setAppointment_'+id+"_"+newDate)
   .then((result)=>{
     console.log(result);
     if(result.data==="Already set"){

@@ -1,6 +1,7 @@
 // src/components/homeComponents/Introduction.js
 
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { Link } from 'react-router-dom';
 import "../../App.css";
 import image1 from "../../images/home/introImage1.png";

@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
 import '../../images/assets/css/admin.css'
 import axios from 'axios';
-import DropzoneImage from '../../components/AdminComponents/Dropzone'
-import DropzoneText from '../../components/AdminComponents/DropzoneText'
+// import DropzoneImage from '../../components/AdminComponents/Dropzone'
+// import DropzoneText from '../../components/AdminComponents/DropzoneText'
 import Sidebar from './Sidebar.js';
 
 
@@ -14,9 +14,10 @@ function ViewCommitteeReports() {
     const [reports, setReports] = useState([]);
     const [loaded, setLoaded] = useState(false);
     const location = useLocation();
+  // eslint-disable-next-line no-unused-vars
   const {email} = location.state;
     useEffect(function(){
-        axios.get('http://localhost:5001/admin2Reports/getAll')
+        axios.get('https://final-0t4v.onrender.com/admin2Reports/getAll')
         .then((result)=>{setReports(result.data); console.log(result)})
         .catch(err=>console.log(err))
         setLoaded(true);

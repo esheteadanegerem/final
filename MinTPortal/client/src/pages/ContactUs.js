@@ -41,7 +41,7 @@ const ContactUs = () => {
      
 
       try {
-        const response = axios.post('http://localhost:5001/footer/add-footer', data);
+        const response = axios.post('https://final-0t4v.onrender.com/footer/add-footer', data);
         console.log(response.data);
           alert('Do you want to submit')
           toast.info('footer form submitted successfully!');

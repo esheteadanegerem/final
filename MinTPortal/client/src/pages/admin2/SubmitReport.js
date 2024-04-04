@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-concat */
 import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { useLocation } from 'react-router-dom';
@@ -15,13 +16,13 @@ const SubmitReport = () => {
   //console.log(email);
   useEffect(
     function(){
-      axios.get('http://localhost:5001/admin/userStatus/getAll')
+      axios.get('https://final-0t4v.onrender.com/admin/userStatus/getAll')
       .then((result)=>{
         setProjects(result.data);
         //console.log(result);
       })
       .catch(err=>console.log(err))
-      axios.get('http://localhost:5001/admin2Reports/find/'+email)
+      axios.get('https://final-0t4v.onrender.com/admin2Reports/find/'+email)
       .then((result)=>{
         setUserID(result.data[0]._id);
         console.log(userID);
@@ -29,6 +30,7 @@ const SubmitReport = () => {
       .catch(err=>console.log(err))
       setLoaded(true);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   ,[]);
   function displayProjects(){
     const tableData = [];
@@ -52,7 +54,7 @@ function generateRow(project){
             <td>{project.projectTitle}</td>
             <td><h6 style={{height:"100px",overflowY:"scroll"}}>{project.description}</h6></td>
             <td>{numToStatus(project.status)}</td>
-            <td><input type="file" name="file" id={project._id + "-" +"file"} className='form-control' 
+            <td><input type="file" name="file" id={project._id + "-" + "file"} className='form-control' 
                     onChange={function(e){ setFile(e.target.files[0]); console.log(file); toast.info("File Selected! Click on Submit") }}/></td>
             <td>
               <button name={project._id + '-' + project.projectTitle} onClick={
@@ -69,6 +71,7 @@ function SubmitReport(id){
   console.log("Clicked!")
   if(loaded && projects[0]){
     const id2 = id.split('-')[0];
+    // eslint-disable-next-line no-unused-vars
     const title1 = id.split('-')[1]
     if(document.getElementById(id2+"-file").files[0]){
     const config = {
@@ -80,7 +83,7 @@ function SubmitReport(id){
     formData.append('file', file);
     console.log(file);
 
-    axios.post('http://localhost:5001/admin2Reports/upload/'+ userID + "-" +  id , formData, config)
+    axios.post('https://final-0t4v.onrender.com/admin2Reports/upload/'+ userID + "-" +  id , formData, config)
     .then((res)=>{console.log(res);})
     .catch(err=>console.log(err))
     toast.info("Report Submitted Successfully!")
@@ -108,6 +111,7 @@ function numToStatus(num){
     return "Working on Project";
   }
 }
+// eslint-disable-next-line no-unused-vars
 function buttonsDisplay(num){
   if(num > 4){
     return "none";

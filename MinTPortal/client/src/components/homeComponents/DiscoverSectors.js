@@ -1,7 +1,9 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 // src/components/homeComponents/DiscoverSectors.js
 
 import React from 'react';
 import "../../App.css";
+// eslint-disable-next-line no-unused-vars
 import { Link } from 'react-router-dom';
 
 

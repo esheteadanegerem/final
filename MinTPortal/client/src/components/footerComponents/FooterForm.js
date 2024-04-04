@@ -15,6 +15,7 @@ function FooterForm() {
 
   });
  
+  // eslint-disable-next-line no-unused-vars
   const handleFileSelect = (event) => {
     const selectedFile = event.target.files[0];
 
@@ -40,6 +41,7 @@ function FooterForm() {
   };
  //text file
     
+ // eslint-disable-next-line no-unused-vars
  const handleTextFileSelect = (event) => {
       
   const selectedFile = event.target.files[0];       
@@ -82,7 +84,7 @@ function FooterForm() {
      
 
       try {
-        const response = axios.post('http://localhost:5001/footer/add-footer', data);
+        const response = axios.post('https://final-0t4v.onrender.com/footer/add-footer', data);
         console.log(response.data);
           alert('Do you want to submit')
           toast.info('footer form submitted successfully!');

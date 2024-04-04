@@ -10,7 +10,7 @@ const UploadReport = ({email}) => {
   const email1 = email;
   useEffect(
     function(){
-      axios.get('http://localhost:5001/admin/userStatus/fetch-'+email1)
+      axios.get('https://final-0t4v.onrender.com/admin/userStatus/fetch-'+email1)
       .then((result)=>{
         console.log(result);
         setProjects(result.data);
@@ -29,7 +29,7 @@ const UploadReport = ({email}) => {
     formData.append('file', file);
     console.log(file);
     let message = "";
-    axios.post('http://localhost:5001/report/upload/'+ projects[0].projectTitle +"-" + projects[0]._id, formData, config)
+    axios.post('https://final-0t4v.onrender.com/report/upload/'+ projects[0].projectTitle +"-" + projects[0]._id, formData, config)
     .then((res)=>{console.log(res); message = "Report Submitted Successfully!"; toast.success(message);})
     .catch(err=>{console.log(err); message = "There was an error"; toast.error(message);})
     }
@@ -45,7 +45,7 @@ const UploadReport = ({email}) => {
     console.log(file);
 
     let message = "";
-    axios.post('http://localhost:5001/projectFiles/upload/'+ projects[0].status +"-" + projects[0]._id, formData, config)
+    axios.post('https://final-0t4v.onrender.com/projectFiles/upload/'+ projects[0].status +"-" + projects[0]._id, formData, config)
     .then((res)=>{console.log(res); message = "File Submitted Successfully!"; toast.success(message)})
     .catch(err=>{console.log(err); message = "There was an error"; toast.error(message)})
 

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import {useNavigate}  from "react-router-dom";
-import "../../images/assets/css/admin.css";
-import AdminHeader from "../../components/AdminComponents/AdminHeader";
+// import { Link } from "react-router-dom";
+// import {useNavigate}  from "react-router-dom";
+// import "../../images/assets/css/admin.css";
+// import AdminHeader from "../../components/AdminComponents/AdminHeader";
 import axios from "axios";
 import Sidebar from './Sidebar.js';
 import { VscEyeClosed, VscEye } from "react-icons/vsc";
 import { ToastContainer, toast } from 'react-toastify';
 import countryOptions from "../../components/registrationComponents/countryOptions.js";
-import Dropzone from "../../components/AdminComponents/Dropzone";
+// import Dropzone from "../../components/AdminComponents/Dropzone";
 
 function AddAdmin() {
     const [fName, SetFname] = useState("");
@@ -48,7 +48,7 @@ function AddAdmin() {
     
       if (password === confirmPassword && password.length >= 8 && /(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&*!.])[A-Za-z\d@#$%^&*!.]{8,}/.test(password)) {
         axios
-          .post("http://localhost:5001/auth/register2", {
+          .post("https://final-0t4v.onrender.com/auth/register2", {
             fName,
             LName,
             password,

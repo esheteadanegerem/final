@@ -1,10 +1,10 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { useLocation, Link } from "react-router-dom";
+
+import { Link } from "react-router-dom";
 function StartApplication(){
     function downloadFile(){
         axios({
-            url: 'http://localhost:5001/templates/ProposalTemplate.docx',
+            url: 'https://final-0t4v.onrender.com/templates/ProposalTemplate.docx',
             method: 'GET',
             responseType: 'blob', // Ensure the response type is set to blob
           })

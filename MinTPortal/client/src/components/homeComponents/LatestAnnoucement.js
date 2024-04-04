@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './home.css';
@@ -12,7 +13,7 @@ const LatestAnnouncement = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5001/announcements/fetchCalls")
+      .get("https://final-0t4v.onrender.com/announcements/fetchCalls")
       .then(result => {
         const calls = result.data;
 

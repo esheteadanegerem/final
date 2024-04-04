@@ -5,6 +5,7 @@ import SectorialGraphicalAnalysis from "../components/GraphicalAnalysisComponent
 
 const GraphicalAnalysis = () => {
   const [selectedTab, setSelectedTab] = useState("sector");
+  // eslint-disable-next-line no-unused-vars
   const [categorySelected, setCategory] = useState(" ");
 
   const handleTabChange = (tab) => {
