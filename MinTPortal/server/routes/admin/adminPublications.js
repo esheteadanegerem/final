@@ -46,7 +46,7 @@ router.post('/add-publication', (req, res) => {
        imagePath =  req.files['image'][0].path; 
        console.log(imagePath) }
 
-      const serverUrl = 'http://localhost:5001'; 
+      const serverUrl = 'https://final-0t4v.onrender.com'; 
 
       // Process image path
       const partsImage = imagePath.split('public\\');

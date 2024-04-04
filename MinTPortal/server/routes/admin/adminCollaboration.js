@@ -67,7 +67,7 @@ router.post('/post-to-collaboration',Verify, (req, res) => {
       if (req.file){ imagePath = req.file.path; 
       console.log(imagePath)  }
          
-      const serverUrl = 'http://localhost:5001'; // Replace this with your server URL
+      const serverUrl = 'https://final-0t4v.onrender.com'; // Replace this with your server URL
       
       //   Remove 'public' from the path
       const parts = imagePath.split('public\\');

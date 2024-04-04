@@ -20,7 +20,7 @@ router.post('/add-footer', async(req, res) => {
     } else{
        const { fullName, email, message,  } = req.body; 
       
-      const serverUrl = 'http://localhost:5001'; // Replace this with your server URL
+      const serverUrl = 'https://final-0t4v.onrender.com'; // Replace this with your server URL
       
       try {
           const newFooter =  new Footer({
