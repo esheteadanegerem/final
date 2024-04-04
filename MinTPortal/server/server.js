@@ -50,7 +50,7 @@ app.use(cookieParser())
 app.use(cors({
  origin:'https://ethiopianationalresearchprotal.netlify.app'
   // methods: ['GET', 'POST',"PUT"],
-  // credentials: true
+  credentials: true
 }));
 app.use(express.static(path.join('./', 'public')));
 
